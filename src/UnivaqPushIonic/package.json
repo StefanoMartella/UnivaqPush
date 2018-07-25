@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@angular/cli": "^6.0.8",
-    "@ionic/app-scripts": "3.1.9",
+    "@ionic/app-scripts": "^3.1.11",
     "@types/googlemaps": "^3.30.8",
     "typescript": "~2.6.2"
   },
