@@ -1,0 +1,23 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'NOTIFICATIONS' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+  
+    <ion-item *ngFor="let section of sectionsKeys(sections)">
+      <ion-label>{{sections[section].section_name}}</ion-label>
+      <ion-checkbox item-right 
+                    [(ngModel)]="sections[section].news_enabled"
+                    (ngModelChange)="setSectionNews(section, $event)" 
+                    color="dark_univaq"
+                    [disabled]="isDisabled"></ion-checkbox>
+    </ion-item>
+  
+  </ion-list>
+</ion-content>

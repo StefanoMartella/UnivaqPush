@@ -1,0 +1,19 @@
+page-tax {
+
+    ion-card-title{
+        font-size: 130% !important;
+        font-weight: 500;
+        border-bottom: .5px solid #dedede;
+    }
+
+    p{
+        font-size: 110% !important;
+        margin: 7px 0 !important;
+    }
+
+    .right{float: right;}
+
+    ion-icon[name^="md-radio-button-on"].green {color: #40c407;}
+    ion-icon[name^="md-radio-button-on"].red {color: #c40606;}
+
+}

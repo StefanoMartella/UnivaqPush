@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'LOGIN' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="logo">
+    <img src="assets/imgs/logo.png" alt="UnivaqPush logo">
+  </div>
+  
+  <form #loginForm="ngForm">
+    <ion-list no-lines>
+      <ion-item>
+        <ion-input placeholder=" {{ 'USERNAME' | translate }}" 
+                   [(ngModel)]="account.username" 
+                   name="username" 
+                   type="text" 
+                   #username="ngModel" 
+                   [maxlength]="16" 
+                   required={{this.usernameRequired}} 
+                   (ionBlur)="this.usernameRequired=true">
+        </ion-input>
+      </ion-item>
+      <p ion-text [hidden]="username.valid" color="danger" padding-left>
+        {{ 'USERNAME_REQUIRED' | translate }}
+      </p>
+      <ion-item>
+        <ion-input placeholder=" {{ 'PASSWORD' | translate }}" 
+                   [(ngModel)]="account.password" 
+                   name="password" 
+                   type="password" 
+                   #password="ngModel" 
+                   [maxlength]="255" 
+                   required={{this.passwordRequired}} 
+                   (ionBlur)="this.passwordRequired=true">
+        </ion-input>
+      </ion-item>
+      <p ion-text [hidden]="password.valid" color="danger" padding-left>
+        {{ 'PASSWORD_REQUIRED' | translate }}
+      </p>
+    </ion-list>
+    <div class="button-container">
+      <button ion-button 
+              (click)="onLogin(loginForm)" 
+              type="submit" 
+              [disabled]="!loginForm.form.valid" >
+        {{ 'LOGIN_BUTTON' | translate }}
+      </button>
+    </div>
+  </form>
+</ion-content>

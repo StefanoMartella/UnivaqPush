@@ -1,0 +1,51 @@
+<ion-menu menuClose [content]="content"> <!--  [swipeEnabled]="false" -->
+  <ion-header>
+    <ion-toolbar color="dark_univaq">
+      <ion-title *ngIf="!isLogged">Menu</ion-title>
+      <div class="user-info" *ngIf="isLogged" padding>
+        <h2 ion-text>{{this.utente.nome + ' ' + this.utente.cognome}}</h2>
+        <span ion-text>{{utente.ruolo | uppercase}}</span>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list *ngIf="!isLogged">
+      <ion-item  (click)="openLoginPage()">
+        <ion-icon  name="key"></ion-icon>
+        {{ 'LOGIN' | translate }}
+      </ion-item>
+      <ion-item *ngFor="let item of defaultMenu" (click)="openPage(item)">
+        <ion-icon [name]="item.icon"></ion-icon>
+        {{item.title | translate}}
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngIf="isLogged">
+      <ion-item-group *ngIf="utente.ruolo == 'docente'">
+        <ion-item *ngFor="let item of menuDocenti" (click)="openPage(item)">
+          <ion-icon  [name]="item.icon"></ion-icon>
+          {{item.title | translate}}
+        </ion-item>
+        <ion-item (click)="logout()">
+          <ion-icon name="exit"></ion-icon>
+          {{ 'LOGOUT' | translate }}
+        </ion-item>
+      </ion-item-group>
+      <ion-item-group *ngIf="utente.ruolo == 'studente'">
+        <ion-item *ngFor="let item of menuStudenti" (click)="openPage(item)">
+          <ion-icon  [name]="item.icon"></ion-icon>
+          {{item.title | translate}}
+        </ion-item>
+        <ion-item (click)="logout()">
+          <ion-icon name="exit"></ion-icon>
+          {{ 'LOGOUT' | translate }}
+        </ion-item>
+      </ion-item-group>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

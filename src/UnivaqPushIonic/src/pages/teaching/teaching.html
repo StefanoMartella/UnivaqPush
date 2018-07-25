@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'TEACHINGS' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let course of insegnamenti">
+    <ion-card-content>
+      <ion-card-title>
+        {{course.denominazione}}
+      </ion-card-title>
+      <h2>{{course.codice}}</h2>
+      <p>
+        {{course.corsoDiLaurea.nome}}
+      </p>
+    </ion-card-content>
+
+    <!-- Teacher options -->
+    <ion-row no-padding>
+      <ion-col text-left>
+        <button ion-button icon-start (click)="openDettaglioInsegnamento(course)">
+          <ion-icon name='create'></ion-icon>
+          {{'COURSE_DETAIL' | translate}}
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button icon-start (click)="openAppelli(course.id)">
+          <ion-icon name='color-wand'></ion-icon>
+          {{'COURSE_APPEAL' | translate}}
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+</ion-content>

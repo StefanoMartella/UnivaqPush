@@ -1,0 +1,15 @@
+{
+  "name": "UnivaqPush",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "dev_push": true,
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://localhost:8080/myunivaq/api"
+    }
+  ]
+}

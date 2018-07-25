@@ -1,0 +1,25 @@
+page-profile {
+
+    .list-md .item-input:last-child,
+    .list-ios .item-input:last-child{border: none}
+
+    .item-input-has-focus .label-md[stacked],
+    .item-input-has-focus .label-ios[stacked]{color: color($colors, dark_univaq)}
+    page-profile .input-cover{font-size: 10px}
+
+    .button-md,
+    .button-ios{
+        border: .5px solid;
+        color: color($colors, dark_univaq);
+        background-color: #ffffff;
+    }
+
+    h2{
+        text-align: center; 
+        margin: 15px 0 !important; 
+        font-weight: 500; 
+        font-size: 22px; 
+        color: color($colors, dark_univaq)
+    }
+
+}

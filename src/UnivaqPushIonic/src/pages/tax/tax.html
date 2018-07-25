@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'TAXES' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card *ngFor="let tax of taxes">
+    <ion-card-content>
+      <ion-card-title>
+         <span>{{ 'TAXES' | translate }} {{tax.id}}</span>
+      </ion-card-title>
+      <p>
+         {{ 'AMOUNT' | translate }}
+         <span class="right">{{tax.importo}}&euro;</span>
+      </p>
+      <p>
+         {{ 'EXPIRATION_DATE' | translate }}
+         <span class="right">{{tax.dataScadenza | date:'dd/MM/yyyy'}}</span>
+      </p>
+      <p>
+        {{ 'STATE' | translate }}
+         <span *ngIf="tax.statoTassa == 'PAGATA'">
+          <span class="right">
+            {{ 'PAID' | translate }}
+            <ion-icon class="green" name="md-radio-button-on"></ion-icon>
+          </span>
+         </span>
+        <span *ngIf="tax.statoTassa != 'PAGATA'">
+          <span class="right">
+            {{ 'NOT_PAID' | translate }}
+            <ion-icon class="red" name="md-radio-button-on"></ion-icon>
+          </span>
+        </span>
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

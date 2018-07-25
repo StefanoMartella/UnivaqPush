@@ -1,0 +1,13 @@
+page-details {
+
+  .title-container{
+    margin: 10px 0;
+    display: flex; /* add */
+    align-items: center; /* add to align vertical */
+  }
+  img{height: 55px; margin: 5px}
+  h2{font-size: 19px; margin-left: 10px !important; width: 70%}
+  p{font-size: 17px; margin: 30px 10px !important; line-height: 1.4}
+  .date{color: #666666; font-size: 14px; font-weight: 300}
+
+}

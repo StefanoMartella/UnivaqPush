@@ -1,0 +1,98 @@
+<ion-content padding>
+
+  <ion-segment [(ngModel)]="time_phone">
+    <ion-segment-button value="front-office">
+      {{ 'FRON_OFFICE' | translate }}
+    </ion-segment-button>
+    <ion-segment-button value="phone">
+      {{ 'CALLS' | translate }}
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="time_phone" class="centered">
+    <h2><ion-icon name="ios-time-outline"></ion-icon></h2>
+    <ion-grid *ngSwitchCase="'front-office'">
+      <ion-row>
+        <ion-col col-4></ion-col>
+        <ion-col class="border-top" col-4>{{ 'MORNING' | translate }}</ion-col>
+        <ion-col class="border-top" col-4>{{ 'AFTERNOON' | translate }}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="border-left" col-4>{{ 'MONDAY' | translate }}</ion-col>
+        <ion-col col-4 class="time">11:00 - 13:00</ion-col>
+        <ion-col col-4 class="time">-</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="border-left" col-4>{{ 'WEDNESDAY' | translate }}</ion-col>
+        <ion-col col-4 class="time">11:00 - 13:00</ion-col>
+        <ion-col col-4 class="time">-</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="border-left" col-4>{{ 'THURSDAY' | translate }}</ion-col>
+        <ion-col col-4 class="time">-</ion-col>
+        <ion-col col-4 class="time">15:00 - 17:00</ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngSwitchCase="'phone'">
+      <ion-row>
+        <ion-col col-4></ion-col>
+        <ion-col class="border-top" col-4>{{ 'MORNING' | translate }}</ion-col>
+        <ion-col class="border-top" col-4>{{ 'AFTERNOON' | translate }}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="border-left" col-4>{{ 'MONDAY' | translate }}</ion-col>
+        <ion-col col-4 class="time">9:00 - 11:00</ion-col>
+        <ion-col col-4 class="time">-</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="border-left" col-4>{{ 'WEDNESDAY' | translate }}</ion-col>
+        <ion-col col-4 class="time">9:00 - 11:00</ion-col>
+        <ion-col col-4 class="time">-</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="border-left" col-4>{{ 'THURSDAY' | translate }}</ion-col>
+        <ion-col col-4 class="time">10:00 - 13:00</ion-col>
+        <ion-col col-4 class="time">-</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div padding>
+    <ion-segment [(ngModel)]="seat">
+      <ion-segment-button value="registered_office">
+        {{ 'REGISTERED_OFFICE' | translate }}
+      </ion-segment-button>
+      <ion-segment-button value="operational_headquarters">
+        {{ 'OPERATIONAL_HEADQUARTERS' | translate }}
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="seat">
+    <div class="centered" *ngSwitchCase="'registered_office'">
+      <ion-icon name="ios-pin-outline"></ion-icon>
+      <p class="selectable">
+        Via XX Settembre, 46/52<br />
+        67100 L'Aquila
+      </p>
+    </div>
+
+    <div class="centered" *ngSwitchCase="'operational_headquarters'">
+      <ion-icon name="ios-pin-outline"></ion-icon>
+      <p class="selectable">
+        Ex Caserma Campomizzi,<br />
+        Località S.Antonio - Casermette,<br />
+        Palazzina "D" - 67100 L'Aquila
+      </p>
+    </div>
+  </div>
+
+  <div class="centered">
+    <ion-icon name="ios-call-outline"></ion-icon>
+    <p class="selectable">
+      086232701
+    </p>
+  </div>
+
+</ion-content>

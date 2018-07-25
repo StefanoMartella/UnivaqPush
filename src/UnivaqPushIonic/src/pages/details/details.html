@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'ANNOUNCEMENT' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <div class="title-container">
+    <img src="assets/imgs/{{news.section}}_avatar.png" alt="section">
+    <h2>
+      {{news.title}}<br />
+      <span *ngIf="news.date != 'Invalid Date'" class="date">{{news.date}}</span>
+    </h2>
+  </div>
+  <!-- innerHtml is used to render tags(i.e. <br />) -->
+  <p [innerHtml]="news.body"></p>
+  <p><a href={{news.link}}>{{ 'MORE_DETAILS' | translate }}</a></p>
+  <ion-fab right bottom>
+    <button color="dark_univaq" ion-fab mini (click)="share(news)">
+      <ion-icon name="md-share-alt"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
