@@ -25,11 +25,10 @@ import android.arch.persistence.room.PrimaryKey;
   @ColumnInfo(name = "section")
   private String section;
 
-  @ColumnInfo(name = "date_in_milliseconds")
-  private String date_in_milliseconds;
+  @ColumnInfo(name = "date")
+  private String date;
 
   // Getters and setters
-
 
   public Integer get_id() { return _id; }
 
@@ -67,12 +66,12 @@ import android.arch.persistence.room.PrimaryKey;
     this.section = section;
   }
 
-  public String getDate_in_milliseconds() {
-    return date_in_milliseconds;
+  public String getDate() {
+    return date;
   }
 
-  public void setDate_in_milliseconds(String date_in_milliseconds) {
-    this.date_in_milliseconds = date_in_milliseconds;
+  public void setDate(String date) {
+    this.date = date;
   }
 
 }

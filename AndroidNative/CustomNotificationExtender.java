@@ -15,7 +15,7 @@ import io.roomdatabase.News;
 public class CustomNotificationExtender extends NotificationExtenderService {
 
   @Override
-  protected boolean onNotificationProcessing(OSNotificationReceivedResult receivedResult){
+  protected boolean onNotificationProcessing(OSNotificationReceivedResult receivedResult) {
 
     News news = new News();
     news.setTitle(receivedResult.payload.title);
@@ -23,7 +23,7 @@ public class CustomNotificationExtender extends NotificationExtenderService {
     try {
       news.setLink(receivedResult.payload.additionalData.getString("link"));
       news.setSection(receivedResult.payload.additionalData.getString("section"));
-      news.setDate_in_milliseconds(receivedResult.payload.additionalData.getString("date_in_milliseconds"));
+      news.setDate(String.valueOf(receivedResult.payload.additionalData.getLong("date")));
     } catch (JSONException e) {
       e.printStackTrace();
     }
