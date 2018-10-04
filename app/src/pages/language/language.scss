@@ -1,0 +1,14 @@
+page-language {
+
+    .item-cover{ padding: 0 }
+    .item-inner{ padding: 0 !important }
+    
+    ion-item{ padding: 0 8px !important }
+    ion-radio{ margin: 0 !important }
+
+    .scroll-content{
+        ion-radio{ padding-right: 5px }
+        .input-wrapper{ padding-left: 5px }
+    }
+
+}

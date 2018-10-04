@@ -1,0 +1,30 @@
+page-info{
+    ion-content{
+
+        ion-title{
+            padding-top: 10px;
+        }
+
+        p.version{
+            margin: 0 !important;
+        }
+
+        p{
+            padding-top: 10px;
+            font-size: 16px;
+            line-height: 1.7
+        }
+
+        ul{
+            padding: 10px !important;
+            margin: !important;
+            margin-left: 25px !important;
+
+            li {
+                padding: 5px 0;
+                font-size: 16px;
+                font-weight: 700
+            }
+        }
+    }
+}

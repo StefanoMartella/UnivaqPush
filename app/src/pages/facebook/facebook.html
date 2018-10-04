@@ -1,0 +1,45 @@
+<ion-content>
+
+    <ion-refresher (ionRefresh)="refreshPosts($event)">
+        <ion-refresher-content>
+        </ion-refresher-content>
+    </ion-refresher>
+
+    <ng-container *ngFor="let post of posts | async">
+        <!-- <a href="http://www.facebook.com/{{post.url}}"> -->
+        <ion-card>
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="http://graph.facebook.com/{{post.from.id}}/picture" />
+                </ion-avatar>
+                <h2>{{ post.from.name }}</h2>
+                <p>{{ post.time | date:'medium' }}</p>
+            </ion-item>
+            <img *ngIf="post.photos.length > 0" [src]="post.photos[0].src" />
+            <!-- Long posts truncation -->
+            <ion-card-content *ngIf="post.truncating != undefined">
+                <p *ngIf="post.truncating">
+                    {{ post.message | truncate : limit }}
+                </p>
+                <p *ngIf="!post.truncating">
+                    {{ post.message  }}
+                </p>
+                <p class="manage-truncation" *ngIf="post.truncating" 
+                   (click)="post.truncating = false">
+                    {{ 'MORE_DETAILS' | translate }}
+                </p>
+                <p class="manage-truncation" *ngIf="!post.truncating" 
+                   (click)="post.truncating = true">
+                    {{ 'LESS_DETAILS' | translate }}
+                </p>
+            </ion-card-content>
+            <!-- Short posts -->
+            <ion-card-content *ngIf="post.truncating == undefined">
+                <p>
+                    {{ post.message }}
+                </p>
+            </ion-card-content>    
+        </ion-card>
+        <!-- </a> -->
+    </ng-container>
+</ion-content>

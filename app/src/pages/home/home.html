@@ -1,0 +1,39 @@
+<ion-content>
+
+  <ion-refresher (ionRefresh)="refreshNews($event)">
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <div class="no-news" *ngIf="!allNews.length">
+      <h2>{{ 'NO_NEWS' | translate }}</h2>
+    </div>
+    <ion-item-sliding #sliding *ngFor="let news of allNews">
+      <ion-item (click)="openDetail(news)">
+        <ion-avatar item-start>
+          <img src="assets/imgs/departments/{{news.section}}_avatar.png" />
+        </ion-avatar>
+        <p class="title">
+          {{news.title}}
+        </p>
+        <!-- innerHtml is used to render tags(i.e. <br />) -->
+        <p class="body" [innerHtml]="news.body"></p>
+        <p *ngIf="news.date != 'Invalid Date'" class="date">
+          {{news.date}}
+        </p>
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button (click)="removeNewsAlert(news, sliding)">
+          <ion-icon name="ios-trash"></ion-icon>
+          {{ "DELETE_BUTTON" | translate }}
+        </button>
+        <button ion-button (click)="share(news, sliding)">
+          <ion-icon name="md-share"></ion-icon>
+          {{ "SHARE_BUTTON" | translate }}
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>

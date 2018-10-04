@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle *ngIf="!toggled">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title *ngIf="!toggled">
+      {{ title | translate }}
+      <ion-icon *ngIf="this.title == 'NEWS'" (click)="toggle()" name="search"></ion-icon>
+    </ion-title>
+    
+    <ion-searchbar *ngIf="toggled"
+                   #searchbar
+                   [(ngModel)]="search" 
+                   animated=true
+                   showCancelButton=true
+                   cancelButtonText=" {{ 'CANCEL_SEARCH' | translate }}"
+                   (ionCancel)="toggle(); closeSearch()"
+                   (ionInput)="searchNews()"
+                   (ionClear)="closeSearch()"
+                   placeholder=" {{ 'SEARCH' | translate }}">
+    </ion-searchbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <super-tabs (tabSelect)="onTabSelect($event)" 
+               tabsPlacement="bottom" 
+              [config]="{ sideMenu: 'left' }">
+    <super-tab [root]="newsTab" 
+                id="NEWS"
+                title="News" 
+                icon="ios-paper-outline"></super-tab>
+    
+    <!--
+    <super-tab [root]="facebookTab" 
+                id="Post"
+                title="Post" 
+                icon="logo-facebook"></super-tab>
+     -->
+     
+    <!-- To have a translation exactly one space is required between the quote and double brace -->
+    <super-tab [root]="secretaryTab"
+                id="SECRETARY"
+                title=" {{ 'SECRETARY' | translate }}" 
+                icon="ios-calendar-outline"></super-tab>
+    <super-tab [root]="adsuTab" 
+                id="ADSU"
+                title="ADSU" 
+                icon="ios-bookmarks-outline"></super-tab>
+    <!-- To have a translation exactly one space is required between the quote and double brace -->
+    <super-tab [root]="canteenTab"
+                id="CANTEEN"
+                title=" {{ 'CANTEEN' | translate }}" 
+                icon="ios-restaurant-outline"></super-tab>
+  </super-tabs>
+</ion-content>

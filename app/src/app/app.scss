@@ -1,0 +1,102 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.selectable {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+ion-header{
+
+  .toolbar-background{
+    background-color: color($colors, dark_univaq);
+  }
+
+  .bar-button,
+  .toolbar-title{
+    color: #ffffff;
+    font-size: 1.8rem
+  }
+}
+
+.user-info{color: #ffffff}
+ion-label{font-size: 18px}
+ion-item-group .item-md:last-child .item-inner,
+ion-item-group .item-md .item-wrapper:last-child .item-inner{
+  border-bottom: 1px solid #dedede
+}
+
+ion-content{
+  ion-list{
+    ion-icon{
+      float: right;
+      color: color($colors, dark_univaq);
+    }
+  }
+}
+
+.alert-md [aria-checked=true] .alert-radio-label,
+.picker-md .picker-prefix, .picker-md .picker-suffix, 
+.picker-md .picker-opt.picker-opt-selected,
+.picker-md .picker-button, .picker-md .picker-button.activated,
+.alert-md .alert-button,
+.alert-ios [aria-checked=true] .alert-radio-label,
+.picker-ios .picker-prefix, .picker-ios .picker-suffix, 
+.picker-ios .picker-opt.picker-opt-selected,
+.picker-ios .picker-button, .picker-ios .picker-button.activated,
+.alert-ios .alert-button{
+    color: color($colors, dark_univaq) !important;
+}
+
+.alert-md [aria-checked=true] .alert-radio-icon,
+.alert-ios [aria-checked=true] .alert-radio-icon{
+  border-color: color($colors, dark_univaq);
+}
+
+.alert-md .alert-radio-inner,
+.alert-ios .alert-radio-inner{
+  background-color: color($colors, dark_univaq);
+}
+
+
+.button-md.activated,
+.button-md:hover:not(.disable-hover),
+.button-ios.activated,
+.button-ios:hover:not(.disable-hover){
+
+    ion-icon{
+      color: #ffffff
+    }
+    background-color: color($colors, dark_univaq) !important;
+    color: #ffffff
+}
+
+.menu-inner{
+  ion-item-group .item-md:last-child .item-inner, 
+  ion-item-group .item-md .item-wrapper:last-child .item-inner,
+  ion-item-group .item-ios:last-child .item-inner, 
+  ion-item-group .item-ios .item-wrapper:last-child .item-innios{ border: none; }
+  ion-item:last-child{ border-bottom: 0.55px solid #dedede; }
+}
+
+.list-ios > .item-block:first-child{
+    border: none !important;
+}
+
+.toolbar-ios ion-title{padding: 0 20px}

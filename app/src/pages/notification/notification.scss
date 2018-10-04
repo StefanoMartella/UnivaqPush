@@ -1,0 +1,30 @@
+page-notification {
+
+    .item-cover{ padding: 0 }
+    .item-inner{ padding: 0 !important }
+    
+    ion-item{ padding: 0 8px !important }
+    ion-checkbox{ margin: 0 !important }
+
+    .scroll-content{
+        ion-checkbox{ padding-right: 5px }
+        .input-wrapper{ padding-left: 5px }
+        ion-label{
+            margin: 0
+        }
+    }
+
+    ion-item-group{
+        margin-bottom: 30px
+    }
+
+    .list-header-md{
+        border: none
+    }
+
+    .list-header-md{
+        padding-left: 8px;
+        margin: 0
+    }
+
+}

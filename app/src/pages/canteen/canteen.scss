@@ -1,0 +1,98 @@
+page-canteen {
+
+  #map_canvas{
+    height: 37%; 
+    display: flex; 
+    align-items: center;
+    min-height: 223px !important;
+
+    /* No internet connection */
+    h2{
+      font-size: 15px;
+      font-weight: 400;
+      margin: auto;
+    }
+
+    /* Mappa satellite */
+    div[role="button"],
+    div[role="button"]{
+      height: 35px !important;
+      font-size: 13px !important;
+      padding: 0 20px !important
+    }
+
+    .gm-style-mtc{
+      div{
+          font-size: 13px !important
+      }
+    }
+
+    /* Zoom In - Zoom out */
+    .gmnoprint:nth-child(1){
+      left: 5px !important;
+
+      div{
+        width: 35px !important;
+        height: auto !important;
+      }
+    }
+
+    .gm-control-active{
+      height: 35px !important;
+      width: 35px !important;
+
+      img{
+        height: 13px !important;
+        width: 13px !important
+      }
+    }
+
+    /* Omino */
+    .gm-svpc{
+      margin-top: 3px;
+      width: 35px !important;
+      height: 35px !important;
+      left: 5px !important;
+
+      img{
+        width: 15px !important;
+        height: 27px !important;
+        left: -7px !important
+      }
+    }
+    
+
+  }
+
+  .scroll-content{padding: 0 !important}
+
+  .about-info{
+
+    height: 62% !important;
+
+    .time-container{text-align: center; padding: 0 10px;}
+    .canteen{font-weight: 700; margin-top: 20px; font-size: 16px; margin-right: 0;}
+    .canteen-time{font-size: 15px; margin: 10px 0}
+    .days{font-size: 13px; font-weight: 400; color: #697072;}
+
+     .informations {
+        text-align: left;
+        font-size: 16px;
+        line-height: 1.4;
+        margin: 0;
+        padding: 10px
+     }
+  }
+
+
+  .ion-ios-time-outline:before{
+    color: color($colors, dark_univaq);
+    padding-left: 10px;
+    font-size: 33px !important
+  }
+
+  .about-info{height: 63%}
+  .centered{text-align: center; margin: 0; padding: 10px}
+  .ion-ios-time-outline:before {padding: 0; font-size: 40px}
+
+}

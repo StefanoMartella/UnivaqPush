@@ -1,0 +1,24 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{ 'ABOUT' | translate }}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <ion-title text-center>
+        {{name}}
+    </ion-title>
+    <p class="version" text-center>
+        {{version}}
+    </p>
+    <p [innerHtml]="'DESCRIPTION' | translate"></p>
+    <ul>
+        <li>Stefano Martella</li>
+        <li>Davide Morelli</li>
+        <li>Paolo Tramontozzi</li>
+        <li>Iari Icaro</li>
+    </ul>
+    <p [innerHtml]="'DESCRIPTION_DETAIL' | translate "></p>
+</ion-content>

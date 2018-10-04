@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'NOTIFICATIONS' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-group *ngFor="let section of sectionsKeys(sections)">
+      <ion-list-header>{{section}}</ion-list-header>
+      <ion-item *ngFor="let subsection of sectionsKeys(sections[section].subsections)">
+        <ion-label>{{sections[section].subsections[subsection].section_name}}</ion-label>
+        <!-- 
+          You can custom toggle's colour according to section in the js:
+          color={{sections[section].color}}
+          The color you pick has to be declared into variable.scss
+         -->
+        <ion-toggle item-right 
+                    [(ngModel)]="sections[section].subsections[subsection].news_enabled"
+                    (ngModelChange)="setSectionNews(subsection, $event)" 
+                    color="dark_univaq"
+                    [disabled]="isDisabled">
+        </ion-toggle>
+      </ion-item>
+    </ion-item-group>
+  
+  </ion-list>
+</ion-content>
