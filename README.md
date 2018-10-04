@@ -11,7 +11,6 @@ complete setup:
 <b>APP_ID</b> (Google App ID)<br />
 <b>GOOGLE_PROJECT_NUMBER</b><br />
 <b>GOOGLE_API_KEY</b><br />
-<b>BANNER_ID</b> (AdMob banner ID)<br />
 <b>NEWS_ON</b> (String that indicates that news are enabled)<br />
 <b>NEWS_OFF</b> (String that indicates that news are enabled)<br />
 <b>MAX_NEWS_NUMBER</b> (Max news number storable)<br />
