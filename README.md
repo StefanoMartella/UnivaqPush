@@ -1,5 +1,9 @@
 ## UnivaqPush
-Unofficial Hybrid mobile app of University of L'Aquila. 
+Unofficial Hybrid mobile app of University of L'Aquila.<br /><br />
+website:<br />
+https://univaqpush.it<br /><br />
+info:<br />
+univaqpush@gmail.com
 
 ## Note
 Open AndroidNative folder and follow the instructions inside the README to
