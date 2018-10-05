@@ -17,7 +17,7 @@ complete setup:
 <b>GOOGLE_API_KEY</b><br />
 <b>NEWS_ON</b> (String that indicates that news are enabled)<br />
 <b>NEWS_OFF</b> (String that indicates that news are enabled)<br />
-<b>MAX_NEWS_NUMBER</b> (Max news number storable)<br />
+<b>MAX_NEWS_NUMBER</b> (Max storable news number)<br />
 <b>POST_MAX_LENGTH</b> (Max length of facebook posts, future implementation)<br />
 
 ## Screenshots
