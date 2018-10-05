@@ -24,5 +24,5 @@ complete setup:
   <img width=30% src="screenshots/segreteria.jpg">
   <img width=30% src="screenshots/adsu.jpg">
   <img width=30% src="screenshots/mensa.jpg">
-  <img width=30% src="screenshots/menu.jpg">
+  <img width=30% src="screenshots/dipartimenti.jpg">
 </p>
