@@ -3,7 +3,7 @@ Unofficial Hybrid mobile app of University of L'Aquila.<br /><br />
 website:<br />
 https://univaqpush.it<br /><br />
 info:<br />
-univaqpush@gmail.com
+univaqpushinfo@gmail.com
 
 ### Getting started
 Copy this project on locally with git clone or direct download.
