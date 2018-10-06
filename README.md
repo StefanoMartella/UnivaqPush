@@ -1,11 +1,16 @@
-## UnivaqPush
+# UnivaqPush
 Unofficial Hybrid mobile app of University of L'Aquila.<br /><br />
-website:<br />
-https://univaqpush.it<br /><br />
-info:<br />
-univaqpush@gmail.com
 
-## Note
+## Getting Started
+### Prerequisites
+
+Install the latest version of the CLI and Cordova
+
+```
+npm install -g ionic cordova
+```
+### Installing
+
 Open AndroidNative folder and follow the instructions inside the README to
 make the app correctly work.
 
@@ -20,7 +25,14 @@ complete setup:
 <b>MAX_NEWS_NUMBER</b> (Max storable news number)<br />
 <b>POST_MAX_LENGTH</b> (Max length of facebook posts, future implementation)<br />
 
-## Screenshots
+### Deployment
+Build project on android
+
+```
+ionic cordova build android
+```
+
+### Screenshots
 
 <p align="center">
   <img width=30% src="screenshots/notizie.jpg"> 
@@ -30,3 +42,16 @@ complete setup:
   <img width=30% src="screenshots/mensa.jpg">
   <img width=30% src="screenshots/dipartimenti.jpg">
 </p>
+
+### License
+This project is licensed under the MIT License - see the LICENSE.md file for details
+
+### Authors
+
+* **Martella Stefano**
+
+### Info
+
+
+* Website: https://univaqpush.it
+* Mail : univaqpush@gmail.com
