@@ -20,13 +20,17 @@ npm install --save
 
 You also need to set these environments variables inside Ionic project for a complete setup:
 
-<b>APP_ID</b> (Google App ID)<br />
-<b>GOOGLE_PROJECT_NUMBER</b><br />
-<b>GOOGLE_API_KEY</b><br />
-<b>NEWS_ON</b> (String that indicates that news are enabled)<br />
-<b>NEWS_OFF</b> (String that indicates that news are enabled)<br />
-<b>MAX_NEWS_NUMBER</b> (Max news number storable)<br />
-<b>POST_MAX_LENGTH</b> (Max length of facebook posts, future implementation)<br />
+```
+export const ENV = {
+  APP_ID // Google App ID
+  GOOGLE_PROJECT_NUMBER
+  GOOGLE_API_KEY
+  NEWS_ON  // String that indicates that news are enabled
+  NEWS_OFF // String that indicates that news are enabled
+  MAX_NEWS_NUMBER // Max news number storable
+  POST_MAX_LENGTH // Max length of facebook posts, future implementation
+}
+```
 
 For more datails on how to set environment variables in Ionic visit this [link](https://github.com/gshigeto/ionic-environment-variables).
 
