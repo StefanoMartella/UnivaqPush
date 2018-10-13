@@ -22,13 +22,13 @@ You also need to set these environments variables inside Ionic project for a com
 
 ```
 export const ENV = {
-  APP_ID // Google App ID
-  GOOGLE_PROJECT_NUMBER
-  GOOGLE_API_KEY
-  NEWS_ON  // String that indicates that news are enabled
-  NEWS_OFF // String that indicates that news are enabled
-  MAX_NEWS_NUMBER // Max news number storable
-  POST_MAX_LENGTH // Max length of facebook posts, future implementation
+  APP_ID: 'your_google_app_id',
+  GOOGLE_PROJECT_NUMBER: 'your_google_project_number',
+  GOOGLE_API_KEY: 'your_google_api_key',
+  NEWS_ON: 'news_enabled',
+  NEWS_OFF 'news_disabled',
+  MAX_NEWS_NUMBER: 'max_news_number',
+  POST_MAX_LENGTH: 'max_post_length'
 }
 ```
 
@@ -66,8 +66,8 @@ Open AndroidNative folder and follow the instructions inside the [README.md](And
 <!-- Versioning -->
 
 ## Authors
-* [**Stefano Martella**](https://github.com/StefanoMartella) - Application and server side.
-* [**Lorenzo Andreoli**](https://github.com/loreand95) - Website.
+* [Stefano Martella](https://github.com/StefanoMartella) - Application and server side.
+* [Lorenzo Andreoli](https://github.com/loreand95) - Website.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
