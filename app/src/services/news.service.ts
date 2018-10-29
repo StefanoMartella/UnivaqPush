@@ -44,37 +44,32 @@ export class NewsService {
   }
 
   // Retrieves all news from database
-  getAllNewsFromDB(): Promise<News[]> {
+  async getAllNewsFromDB(): Promise<News[]> {
     let allNews: Array<News> = new Array<News>();
 
-    return this.ready.then(() => {
+    return this.ready.then(async () => {
       // Removing news exceeding MAX_NEWS_NUMBER value
-      return this.removeOldNewsFromDB().then(() => {
-        // Retrieving all news from db
-        return this.db.executeSql("SELECT * FROM notification ORDER BY _id DESC", [])
-          .then(raw_news => {
-            // Filling allNews variable with retrieved news
-            this.fillNews(raw_news, allNews);
-            return allNews;
-          });
-      });
+      await this.removeOldNewsFromDB();
+      const raw_news = await this.db.executeSql(
+        "SELECT * FROM notification ORDER BY _id DESC", []
+      );
+      // Filling allNews variable with retrieved news
+      this.fillNews(raw_news, allNews);
+      return allNews;
     });
   }
 
   // Remove news if they are more than MAX_NEWS_NUMBER
-  removeOldNewsFromDB(): Promise<void> {
-    return this.db.executeSql("SELECT COUNT(*) FROM notification", []).then(data => {
-      let number_of_rows = data.rows.item(0)["COUNT(*)"];
-      //console.log("Rows: " + number_of_rows);
-      if (number_of_rows > ENV.MAX_NEWS_NUMBER) {
-        let query =
-          "DELETE FROM notification WHERE _id IN " +
-          "(SELECT _id FROM notification ORDER BY _id ASC LIMIT " +
-          (number_of_rows - ENV.MAX_NEWS_NUMBER) +
-          ");";
-        this.db.executeSql(query, []);
-      }
-    });
+  async removeOldNewsFromDB(): Promise<void> {
+    const data = await this.db.executeSql("SELECT COUNT(*) FROM notification", []);
+    let number_of_rows = data.rows.item(0)["COUNT(*)"];
+    if (number_of_rows > ENV.MAX_NEWS_NUMBER) {
+      let query = "DELETE FROM notification WHERE _id IN " +
+        "(SELECT _id FROM notification ORDER BY _id ASC LIMIT " +
+         (number_of_rows - ENV.MAX_NEWS_NUMBER) +
+        ");";
+      this.db.executeSql(query, []);
+    }
   }
 
   // Remove a single news from database according to notification_id
@@ -86,7 +81,6 @@ export class NewsService {
 
   fillNews(current_news: any, allNews: Array<News>): void {
     for (let i = 0; i < current_news.rows.length; i++) {
-
       let currentNews = new News(
         current_news.rows.item(i)._id,
         current_news.rows.item(i).title,
@@ -95,17 +89,15 @@ export class NewsService {
         current_news.rows.item(i).section,
         current_news.rows.item(i).date
       );
-
       allNews.push(currentNews);
     }
   }
 
   // Retrive status of news(enabled or disabled)
   // for the given section
-  getSectionNewsStatus(section: string): Promise<boolean> {
-    return this.storage.get(section).then(status_news_db => {
-      return status_news_db === ENV.NEWS_ON ? true : false;
-    });
+  async getSectionNewsStatus(section: string): Promise<boolean> {
+    const status_news_db = await this.storage.get(section);
+    return status_news_db === ENV.NEWS_ON ? true : false;
   }
 
   // Set status of news(enabled or disabled)
@@ -115,7 +107,9 @@ export class NewsService {
       this.oneSignal.sendTag(section, ENV.NEWS_ON);
       this.storage.set(section, ENV.NEWS_ON);
     } else {
+      //this.oneSignal.deleteTag(section);
       this.oneSignal.sendTag(section, ENV.NEWS_OFF);
+      //this.storage.remove(section);
       this.storage.set(section, ENV.NEWS_OFF);
     }
   }

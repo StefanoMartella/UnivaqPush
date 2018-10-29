@@ -50,6 +50,9 @@ $refresher-border-color: #ffffff;
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
+// Custom font
+$font-family-ios-base: "TrebuchetMS";
+
 $segment-button-ios-background-color-activated: color($colors, dark_univaq);
 $radio-ios-color-on: color($colors, dark_univaq);
 $searchbar-ios-input-search-icon-color: #ffffff;
@@ -60,6 +63,9 @@ $searchbar-ios-input-placeholder-color: #eeeeee;
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
+
+// Custom font
+$font-family-md-base: "TrebuchetMS";
 
 $radio-md-color-on: color($colors, dark_univaq);
 $searchbar-md-input-search-icon-color: #ffffff;

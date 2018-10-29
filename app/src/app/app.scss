@@ -15,6 +15,14 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+// Custom font import
+@font-face {
+  font-family: 'TrebuchetMS';
+  font-weight: 300;
+  font-style: normal;
+  src: url('../assets/fonts/TrebuchetMS.ttf') format('truetype')
+}
+
 .selectable {
   -webkit-user-select: text;
   -moz-user-select: text;
