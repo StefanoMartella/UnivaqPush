@@ -3,6 +3,9 @@ page-info{
 
         ion-title{
             padding-top: 10px;
+            .toolbar-title{
+                color: #000000;
+            }
         }
 
         p.version{
