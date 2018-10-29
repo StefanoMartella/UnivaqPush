@@ -9,7 +9,7 @@
     
     <ion-list>
       <ion-item *ngFor="let item of menu" (click)="openPage(item)">
-        <ion-icon [name]="item.icon"></ion-icon>
+        <ion-icon [name]="item.icon" item-right color="dark_univaq"></ion-icon>
         {{item.title | translate}}
       </ion-item>
     </ion-list>

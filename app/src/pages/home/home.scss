@@ -3,55 +3,99 @@ page-home {
   .list-md,
   .list-ios {
 
-    margin: 0; 
+    margin: 0;
 
-    .item-block .item-inner{
+    .item-block .item-inner {
       padding-right: 15px
     }
 
-    ion-icon::before{
-      color: inherit;
+    ion-icon::before {
       font-size: 19px
     }
 
   }
 
   .button-md,
-  .button-ios{
-      background-color: #ffffff;
-      color: color($colors, dark_univaq);
-      font-size: 19px;
+  .button-ios {
+    background-color: #ffffff;
+    color: color($colors, dark_univaq);
+    font-size: 19px;
   }
 
-  p{margin: .5% 0 !important}
-  .no-news{
+  p {
+    margin: .5% 0 !important
+  }
+
+  .no-news {
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
 
-    h2{margin: auto; font-size: 18px; font-weight: 400}
+    h2 {
+      margin: auto;
+      font-size: 18px;
+      font-weight: 400
+    }
   }
 
-  .title{font-size: 92%; font-weight: 400; color: #000000}
-  .body{
+  .title {
+    font-size: 92%;
+    font-weight: 400;
+    color: #000000
+  }
 
-     br{display: none}
+  .body {
 
-    font-size: 82%; 
-    font-weight: 400; 
+    br {
+      display: none
+    }
+
+    font-size: 82%;
+    font-weight: 400;
     padding-bottom: 1%;
   }
-  .date{font-size: 68%; font-weight: 300}
-  .item-inner{padding-right: 20px !important;}
-  .scroll-content{padding: 0 !important;}
-  .button-inner{font-weight: 500 !important; font-size: 12px}
 
-  ion-item{height: 100%}
-  ion-item-sliding{border: none; height: 14.28%; min-height: 65px; max-height: 100px}
-  ion-list{height: 100%}
-  ion-searchbar{background-color: color($colors, dark_univaq) !important;}
-  ion-label{margin: 0 !important;}
-  
+  .date {
+    font-size: 68%;
+    font-weight: 300
+  }
+
+  .item-inner {
+    padding-right: 20px !important;
+  }
+
+  .scroll-content {
+    padding: 0 !important;
+  }
+
+  .button-inner {
+    font-weight: 500 !important;
+    font-size: 12px
+  }
+
+  ion-item {
+    height: 100%
+  }
+
+  ion-item-sliding {
+    border: none;
+    height: 14.28%;
+    min-height: 65px;
+    max-height: 100px
+  }
+
+  ion-list {
+    height: 100%
+  }
+
+  ion-searchbar {
+    background-color: color($colors, dark_univaq) !important;
+  }
+
+  ion-label {
+    margin: 0 !important;
+  }
+
 
 }

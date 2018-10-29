@@ -10,7 +10,7 @@
 <ion-content padding>
   <ion-list>
     <ion-item-group *ngFor="let section of sectionsKeys(sections)">
-      <ion-list-header>{{section}}</ion-list-header>
+      <p class="section-name">{{section}}</p>
       <ion-item *ngFor="let subsection of sectionsKeys(sections[section].subsections)">
         <ion-label>{{sections[section].subsections[subsection].section_name}}</ion-label>
         <!-- 
