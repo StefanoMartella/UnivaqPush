@@ -12,10 +12,10 @@ This project requires Ionic 3 and Java >= 8 installed on your system.
 ### Prerequisites
 
 After cloning this project on your pc move inside the project folder
-and install all necessary plugins from the command line running: 
+and install all necessary plugins from the command line running:
 
 ```
-npm install --save
+npm install
 ```
 
 You also need to set these environments variables inside Ionic project for a complete setup:
@@ -34,14 +34,14 @@ export const ENV = {
 
 For more datails on how to set environment variables in Ionic visit this [link](https://github.com/gshigeto/ionic-environment-variables).
 
-Open AndroidNative folder and follow the instructions inside the [README.md](AndroidNative/README.md) to make the app correctly work with Android platform. 
+Open AndroidNative folder and follow the instructions inside the [README.md](AndroidNative/README.md) to make the app correctly work with Android platform.
 
 <!-- ### Installing -->
 
 ## Screenshots
 
 <p align="center">
-  <img width=30% src="screenshots/notizie.jpg"> 
+  <img width=30% src="screenshots/notizie.jpg">
   <img width=30% src="screenshots/dettaglio-notizia.jpg">
   <img width=30% src="screenshots/segreteria.jpg">
   <img width=30% src="screenshots/adsu.jpg">
@@ -59,7 +59,7 @@ Open AndroidNative folder and follow the instructions inside the [README.md](And
 ## Built With
 [Ionic framework](https://ionicframework.com/docs/)
 
-<!-- 
+<!--
   ## Contributing
   Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 -->
@@ -72,7 +72,7 @@ Open AndroidNative folder and follow the instructions inside the [README.md](And
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
 
-<!-- 
+<!--
   ## Acknowledgments
   * Hat tip to anyone whose code was used
   * Inspiration
